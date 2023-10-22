@@ -6,14 +6,9 @@
  */
 
 import {config} from '@gluestack-ui/config';
-import {
-  Box,
-  GluestackUIProvider,
-  ScrollView,
-  VStack,
-} from '@gluestack-ui/themed';
+import {Box, GluestackUIProvider, ScrollView} from '@gluestack-ui/themed';
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {Dimensions, SafeAreaView, StatusBar} from 'react-native';
 import HomePage from './pages/Home';
 import BottomNavigationBar from './components/BottomNavigationBar';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -25,11 +20,16 @@ function App(): JSX.Element {
         <StatusBar barStyle="light-content" />
         {/*body*/}
         <ScrollView w="100%">
-          <Box w="100%" alignItems="flex-start" bg="white" p={20}>
+          <Box
+            w="100%"
+            alignItems="flex-start"
+            bg="white"
+            minHeight={Dimensions.get('window').height}
+            p={20}>
             <HomePage />
           </Box>
         </ScrollView>
-        {/* <BottomNavigationBar /> */}
+        <BottomNavigationBar />
       </SafeAreaView>
     </GluestackUIProvider>
   );
