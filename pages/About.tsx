@@ -7,7 +7,7 @@ type Props = {
   navigation: any;
 };
 
-const Home = ({navigation}: Props) => {
+const AboutPage = ({navigation}: Props) => {
   return (
     <SafeAreaView>
       <VStack
@@ -17,8 +17,8 @@ const Home = ({navigation}: Props) => {
         bg="$white"
         minHeight={Dimensions.get('window').height}>
         <HStack justifyContent="space-between">
-          <Heading size="lg">Hi, User</Heading>
-          <TouchableOpacity onPress={() => navigation.navigate('About')}>
+          <Heading size="xl">About Page</Heading>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Box
               p={10}
               borderWidth={1}
@@ -33,4 +33,4 @@ const Home = ({navigation}: Props) => {
   );
 };
 
-export default Home;
+export default AboutPage;
